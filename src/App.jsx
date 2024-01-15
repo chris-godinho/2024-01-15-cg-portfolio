@@ -35,7 +35,7 @@ const App = () => {
   return (
     <div>
       <Header currentPage={currentPage} handlePageChange={handlePageChange} />
-      <main>{renderPage()}</main>
+      <main className="main-cg">{renderPage()}</main>
       <Footer />
     </div>
   );

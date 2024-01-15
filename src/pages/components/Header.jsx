@@ -1,57 +1,60 @@
 function Header({ currentPage, handlePageChange }) {
   return (
-    <nav className="navbar navbar-expand-lg">
-      <div className="container-fluid">
+    <header className="header-cg">
+      <div className="header-content-cg">
         <a
           href="#about-me"
-          onClick={() => handlePageChange('AboutMe')}
-          className='navbar-brand nav-title'
+          onClick={() => handlePageChange("AboutMe")}
+          className="logo-brand-cg"
         >
+          <img src="/logo-cg.png" alt="Chris Godinho" />
           Chris Godinho
         </a>
-        <a className="" href="#"></a>
-        <div className="navbar-linklist" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a
-                href="#about-me"
-                onClick={() => handlePageChange('AboutMe')}
-                className={currentPage === 'AboutMe' ? 'nav-link active' : 'nav-link'}
-              >
-                About Me
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                href="#portfolio"
-                onClick={() => handlePageChange('Portfolio')}
-                className={currentPage === 'Portfolio' ? 'nav-link active' : 'nav-link'}
-              >
-                Portfolio
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                href="#contact"
-                onClick={() => handlePageChange('Contact')}
-                className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
-              >
-                Contact
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                href="#resume"
-                onClick={() => handlePageChange('Resume')}
-                className={currentPage === 'Resume' ? 'nav-link active' : 'nav-link'}
-              >
-                Resume
-              </a>
-            </li>
-          </ul>
-        </div>
+        <nav className="nav-menu-dropdown-cg">
+          <span className="material-symbols-outlined nav-menu-dropdown-button-cg">
+            menu
+          </span>
+          <div className="nav-menu-dropdown-content-cg">
+            <a
+              href="#about-me"
+              onClick={() => handlePageChange("AboutMe")}
+              className={
+                currentPage === "AboutMe" ? "nav-link-cg active" : "nav-link-cg"
+              }
+            >
+              About
+            </a>
+            <a
+              href="#portfolio"
+              onClick={() => handlePageChange("Portfolio")}
+              className={
+                currentPage === "Portfolio" ? "nav-link-cg active" : "nav-link-cg"
+              }
+            >
+              Portfolio
+            </a>
+            <a
+              href="#resume"
+              onClick={() => handlePageChange("Resume")}
+              className={
+                currentPage === "Resume" ? "nav-link-cg active" : "nav-link-cg"
+              }
+            >
+              Resume
+            </a>
+            <a
+              href="#contact"
+              onClick={() => handlePageChange("Contact")}
+              className={
+                currentPage === "Contact" ? "nav-link-cg active" : "nav-link-cg"
+              }
+            >
+              Contact
+            </a>
+          </div>
+        </nav>
       </div>
-    </nav>    
+    </header>
   );
 }
 
