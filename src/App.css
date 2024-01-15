@@ -1,0 +1,75 @@
+/* styles.css */
+
+:root {
+  --main-background-color: rgba(43, 48, 59, 1);
+  --secondary-background-color: rgba(34, 38, 47, 1);
+
+  --main-accent-color: rgba(147, 3, 46, 1);
+  --light-accent-color: rgba(167, 23, 66, 1);
+  --lighter-accent-color: rgba(187, 43, 86, 1);
+  --lightest-accent-color: rgba(207, 63, 106, 1);
+  --dark-accent-color: rgba(127, 0, 26, 1);
+  --darker-accent-color: rgba(107, 0, 6, 1);
+  --darkest-accent-color: rgba(87, 0, 0, 1);
+
+  --box-background-color: rgba(219, 157, 71, 1);
+  --box-shadow-color: rgba(0, 0, 0, 0.25);
+  --input-background-color: rgba(249, 248, 248, 1);
+
+  --button-background-color: rgba(147, 3, 46, 1);
+  --button-background-color-hover: rgba(207, 63, 106, 1);
+  --button-background-color-focus: rgba(187, 43, 86, 1);
+  --button-background-color-active: rgba(167, 23, 66, 1);
+  --button-text-color: rgba(249, 248, 248, 1);
+  --button-text-color-hover: rgba(249, 248, 248, 1);
+  --button-text-color-focus: rgba(249, 248, 248, 1);
+  --button-text-color-active: rgba(249, 248, 248, 1);
+  
+  --text-dark-on-light-color: rgba(249, 248, 248, 1);
+  --text-light-on-dark-color: rgba(28, 31, 51, 1);
+  --heading-dark-on-light-color: rgba(249, 248, 248, 1);
+  --heading-light-on-dark-color: rgba(28, 31, 51, 1);
+  --alert-text-color: rgba(187, 43, 86, 1);
+  --link-text-color: rgba(219, 157, 71, 1);
+
+  --main-font-family: 'Dosis', sans-serif;
+}
+
+#root.light-mode-cg {
+  --main-background-color: rgba(43, 48, 59, 1);
+  --secondary-background-color: rgba(34, 38, 47, 1);
+
+  --main-accent-color: rgba(147, 3, 46, 1);
+  --light-accent-color: rgba(167, 23, 66, 1);
+  --lighter-accent-color: rgba(187, 43, 86, 1);
+  --lightest-accent-color: rgba(207, 63, 106, 1);
+  --dark-accent-color: rgba(127, 0, 26, 1);
+  --darker-accent-color: rgba(107, 0, 6, 1);
+  --darkest-accent-color: rgba(87, 0, 0, 1);
+
+  --box-background-color: rgba(219, 157, 71, 1);
+  --box-shadow-color: rgba(0, 0, 0, 0.25);
+  --input-background-color: rgba(249, 248, 248, 1);
+
+  --button-background-color: rgba(147, 3, 46, 1);
+  --button-background-color-hover: rgba(207, 63, 106, 1);
+  --button-background-color-focus: rgba(187, 43, 86, 1);
+  --button-background-color-active: rgba(167, 23, 66, 1);
+  --button-text-color: rgba(249, 248, 248, 1);
+  --button-text-color-hover: rgba(249, 248, 248, 1);
+  --button-text-color-focus: rgba(249, 248, 248, 1);
+  --button-text-color-active: rgba(249, 248, 248, 1);
+  
+  --text-dark-on-light-color: rgba(249, 248, 248, 1);
+  --text-light-on-dark-color: rgba(28, 31, 51, 1);
+  --heading-dark-on-light-color: rgba(249, 248, 248, 1);
+  --heading-light-on-dark-color: rgba(28, 31, 51, 1);
+  --alert-text-color: rgba(187, 43, 86, 1);
+  --link-text-color: rgba(219, 157, 71, 1);
+
+  --main-font-family: 'Dosis', sans-serif;
+}
+
+#root {
+  font-family: var(--main-font-family);
+}
