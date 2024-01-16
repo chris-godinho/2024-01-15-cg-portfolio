@@ -216,6 +216,12 @@ textarea {
   display: none;
 }
 
+.desktop-icons-cg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .navbar-icons-cg {
   display: flex;
   flex-direction: row;
@@ -228,6 +234,12 @@ textarea {
 
 .navbar-icons-cg img {
   height: 2em;
+}
+
+.color-mode-icon-cg {
+  color: var(--text-dark-on-light-color);
+  opacity: 0.3;
+  padding-top: 10px;
 }
 
 /* About Me Component styles */
@@ -276,7 +288,7 @@ textarea {
 }
 
 .project-github-icon-cg:hover {
-  filter: brightness(110%);
+  filter: brightness(140%);
 }
 
 /* Resume Component styles */
@@ -406,6 +418,12 @@ textarea {
     margin-left: 30vw;
     text-align: right;
     padding: 0;
+  }
+
+  .mobile-icons-cg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .app-link-icon-cg {

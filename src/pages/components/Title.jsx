@@ -1,6 +1,21 @@
+import React from "react";
 import SocialIcons from "./SocialIcons";
 
 function Title({ currentPage, handlePageChange }) {
+  const [isLightMode, setIsLightMode] = React.useState(
+    localStorage.getItem("isLightMode") === "false" ? false : true
+  );
+
+  const toggleTheme = () => {
+    setIsLightMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem("isLightMode", newMode.toString());
+      return newMode;
+    });
+
+    document.getElementById("root").classList.toggle("light-mode-cg", !isLightMode);
+  };
+
   return (
     <div className="title-cg">
       <a href="#about-me" onClick={() => handlePageChange("AboutMe")}>
@@ -45,7 +60,10 @@ function Title({ currentPage, handlePageChange }) {
         </a>
       </div>
       <div className="desktop-icons-cg">
-        <SocialIcons />
+        <SocialIcons isLightMode={isLightMode}/>
+        <a href="#" onClick={toggleTheme}>
+          <span className="material-symbols-outlined color-mode-icon-cg">{isLightMode ? "clear_night" : "clear_day"}</span>
+        </a>
       </div>
     </div>
   );

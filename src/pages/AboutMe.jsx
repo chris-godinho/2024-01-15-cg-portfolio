@@ -1,6 +1,23 @@
+import React from "react";
 import SocialIcons from "./components/SocialIcons";
 
 export default function AboutMe() {
+  const [isLightMode, setIsLightMode] = React.useState(
+    localStorage.getItem("isLightMode") === "false" ? false : true
+  );
+
+  const toggleTheme = () => {
+    setIsLightMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem("isLightMode", newMode.toString());
+      return newMode;
+    });
+
+    document
+      .getElementById("root")
+      .classList.toggle("light-mode-cg", !isLightMode);
+  };
+
   return (
     <div className="main-container-cg">
       <p>I am a Full Stack Developer based in Mississauga, Ontario, Canada.</p>
@@ -19,7 +36,12 @@ export default function AboutMe() {
         responsive, and robust products that leave a lasting impression.
       </p>
       <div className="mobile-icons-cg">
-        <SocialIcons />
+        <a href="#" onClick={toggleTheme}>
+          <span className="material-symbols-outlined color-mode-icon-cg">
+            {isLightMode ? "clear_night" : "clear_day"}
+          </span>
+        </a>
+        <SocialIcons isLightMode={isLightMode}/>
       </div>
     </div>
   );

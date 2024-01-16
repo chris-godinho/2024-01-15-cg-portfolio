@@ -1,7 +1,29 @@
 // ProjectInfo.js
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function ProjectInfo({ card }) {
+  const [isLightMode, setIsLightMode] = useState(
+    document.getElementById("root").classList.contains("light-mode-cg")
+  );
+
+  useEffect(() => {
+    // Callback function when mutation occurs
+    const handleMutation = () => {
+      setIsLightMode(document.getElementById("root").classList.contains("light-mode-cg"));
+    };
+
+    // Create a MutationObserver instance
+    const observer = new MutationObserver(handleMutation);
+
+    // Observe changes to the class attribute of #root
+    observer.observe(document.getElementById("root"), { attributes: true });
+
+    // Clean up the observer when the component unmounts
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="project-details-cg">
       <img
@@ -16,7 +38,7 @@ export default function ProjectInfo({ card }) {
         </a>
         <a href={card.repoLink} target="_blank" rel="noopener noreferrer">
           <img
-            src="/github_yl_icon.png"
+            src={isLightMode ? "/github_rd_icon.png" : "/github_yl_icon.png"}
             className="project-github-icon-cg"
             alt="GitHub"
           />
