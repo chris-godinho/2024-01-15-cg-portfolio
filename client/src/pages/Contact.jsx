@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { validateEmail } from "../utils/helpers";
+import axios from "axios";
 
 function Contact() {
   const [senderName, setSenderName] = useState("");
@@ -23,7 +24,7 @@ function Contact() {
     }
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (!senderName) {
       setErrorMessage("Please enter your name.");
@@ -38,10 +39,24 @@ function Contact() {
       return;
     }
 
-    setSenderName("");
-    setEmail("");
-    setMessage("");
-    alert(`Message sent!`);
+    try {
+      const response = await axios.post('http://localhost:3001/send-email', {
+        senderName,
+        email,
+        message,
+      });
+
+      // Handle success (you can show a success message to the user)
+      console.log(response.data);
+      setSenderName('');
+      setEmail('');
+      setMessage('');
+      alert(`Message sent!`);
+    } catch (error) {
+      // Handle error (you can show an error message to the user)
+      console.error(error);
+      setErrorMessage('Error sending email. Please try again later.');
+    }
   };
 
   return (
