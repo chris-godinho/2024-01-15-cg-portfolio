@@ -1,18 +1,31 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { validateEmail } from "../utils/helpers";
+import PopUpModal from "./components/PopUpModal";
+
+const FORM_ENDPOINT =
+  "https://public.herotofu.com/v1/eeadf220-b429-11ee-9dd2-c1caafee32ff";
 
 function Contact() {
   const [senderName, setSenderName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   const handleInputChange = (e) => {
     const { target } = e;
     const inputType = target.name;
     const inputValue = target.value;
 
-    setErrorMessage("");
+    setModalMessage("");
 
     if (inputType === "senderName") {
       setSenderName(inputValue);
@@ -26,22 +39,52 @@ function Contact() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (!senderName) {
-      setErrorMessage("Please enter your name.");
+      setModalMessage("Please enter your name.");
+      openModal();
       return;
     }
     if (!validateEmail(email) || !email) {
-      setErrorMessage("Please enter a valid email address.");
+      setModalMessage("Please enter a valid email address.");
+      openModal();
       return;
     }
     if (!message) {
-      setErrorMessage("Please enter a message.");
+      setModalMessage("Please enter a message.");
+      openModal();
       return;
     }
 
-    setSenderName("");
-    setEmail("");
-    setMessage("");
-    alert(`Message sent!`);
+    const inputs = e.target.elements;
+    const data = {};
+
+    for (let i = 0; i < inputs.length; i++) {
+      if (inputs[i].name) {
+        data[inputs[i].name] = inputs[i].value;
+      }
+    }
+
+    fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Form response was not ok");
+        }
+
+        setSenderName("");
+        setEmail("");
+        setMessage("");
+        setModalMessage("Your message has been sent, thank you.");
+        openModal();
+      })
+      .catch((err) => {
+        e.target.submit();
+      });
   };
 
   return (
@@ -89,6 +132,9 @@ function Contact() {
           Submit
         </button>
       </form>
+      <PopUpModal isOpen={isModalOpen} onClose={closeModal}>
+        <p>{modalMessage}</p>
+      </PopUpModal>
     </div>
   );
 }

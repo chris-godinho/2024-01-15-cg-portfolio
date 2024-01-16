@@ -143,6 +143,31 @@ textarea {
   display: none;
 }
 
+.modal-cg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--box-shadow-color);
+}
+
+.modal-cg.open {
+  display: block;
+}
+
+.modal-content-cg {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--main-background-color);
+  padding: 25px;
+  border-radius: 10px;
+}
+
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
@@ -159,6 +184,13 @@ textarea {
   min-height: 100vh;
 }
 
+.main-container-cg {
+  max-width: 50%;
+  padding: 0 8%;
+  flex: 1;
+}
+
+/* Title Component styles */
 .title-cg {
   max-width: 50%;
   padding: 0 8%;
@@ -174,6 +206,10 @@ textarea {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   margin-bottom: 20px;
+}
+
+.title-lettering-cg {
+  color: var(--text-dark-on-light-color);
 }
 
 .title-navbar-cg {
@@ -205,12 +241,12 @@ textarea {
   height: 2em;
 }
 
-.main-container-cg {
-  max-width: 50%;
-  padding: 0 8%;
-  flex: 1;
+/* About Me Component styles */
+.mobile-icons-cg {
+  display: none;
 }
 
+/* Portfolio Component styles */
 .portfolio-container-cg {
   display: flex;
   flex-direction: row;
@@ -242,6 +278,7 @@ textarea {
   filter: brightness(110%);
 }
 
+/* Resume Component styles */
 .proficiencies-container-cg {
   display: flex;
   flex-direction: row;
@@ -257,6 +294,7 @@ textarea {
   flex: 1;
 }
 
+/* Contact Component styles */
 .contact-title-cg,
 .contact-submit-button-cg {
   margin-left: 4px;
@@ -265,4 +303,108 @@ textarea {
 .form-container-cg {
   display: flex;
   flex-direction: column;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1270px) {
+  p, li {
+    font-size: 0.9em;
+  }
+
+  .title-cg p {
+    font-size: 6em;
+  }
+
+  .project-thumbnail-cg {
+    height: auto;
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  p, li {
+    font-size: 0.8em;
+  }
+
+  .title-cg p {
+    font-size: 4em;
+  }
+
+  .subtitle-cg {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-icons-cg {
+    display: block;
+  }
+
+  p, li {
+    font-size: 1em;
+  }
+
+  .subtitle-cg {
+    font-size: 1em;
+  }
+
+  .title-cg {
+    font-size: 1em;
+    flex: 0 0 auto;
+    border: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 0;
+    padding-left: 3vw;
+    padding-top: 4vh;
+    padding-bottom: 2vh;
+    width: 15vw;
+  }
+
+  .title-lettering-cg {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    white-space: nowrap;
+  }
+
+  .title-navbar-cg {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  .nav-link-cg {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .desktop-icons-cg {
+    display: none;
+  }
+
+  .navbar-icons-cg {
+    justify-content: flex-end;
+  }
+
+  .navbar-icons-cg a {
+    margin-right: 0px;
+    margin-left: 20px;
+  }
+
+  .main-container-cg {
+    flex: 1;
+    margin-left: 30vw;
+    text-align: right;
+    padding: 0;
+  }
+
+  .resume-download-cg {
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  .contact-title-cg {
+    text-align: left;
+  }
 }

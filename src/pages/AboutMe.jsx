@@ -1,3 +1,5 @@
+import SocialIcons from "./components/SocialIcons";
+
 export default function AboutMe() {
   return (
     <div className="main-container-cg">
@@ -16,6 +18,9 @@ export default function AboutMe() {
         I thrive on the challenges of translating concepts into user-friendly,
         responsive, and robust products that leave a lasting impression.
       </p>
+      <div className="mobile-icons-cg">
+        <SocialIcons />
+      </div>
     </div>
   );
 }
