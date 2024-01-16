@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import ProjectInfo from "./components/ProjectInfo";
 
 export default function Portfolio() {
-  const [hoveredCard, setHoveredCard] = useState(null);
-
-  const projectInfoEl = document.querySelector(".project-info-cg");
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [selectedCardData, setSelectedCardData] = useState(null);
+  const isMobile = window.innerWidth <= 768;
 
   const cardsData = [
     {
@@ -37,7 +38,7 @@ export default function Portfolio() {
       id: 4,
       imageUrl: "/project04_thumbnail.jpg",
       title: "JavaScript Quiz",
-      link: "https://kristbg.github.io/2023-08-03-javascript-quiz-game/",
+      link: "https://chris-godinho.github.io/2023-08-03-javascript-quiz-game/",
       repoLink:
         "https://github.com/chris-godinho/2023-08-03-javascript-quiz-game",
       description: "An interactive quiz game on basic JavaScript knowledge.",
@@ -55,55 +56,57 @@ export default function Portfolio() {
       id: 6,
       imageUrl: "/project06_thumbnail.jpg",
       title: "Weather Forecast",
-      link: "https://kristbg.github.io/2023-08-21-weather-forecast/",
+      link: "https://chris-godinho.github.io/2023-08-21-weather-forecast/",
       repoLink: "https://github.com/chris-godinho/2023-08-21-weather-forecast",
       description:
         "A simple application for obtaining the weather forecast for a given city, obtaining data through the OpenWeather API.",
     },
   ];
 
+  const handleCardClick = (cardId) => {
+    const newSelectedCard = selectedCard === cardId ? null : cardId;
+    setSelectedCard(newSelectedCard);
+
+    // Set selected card data if a card is selected
+    setSelectedCardData(
+      newSelectedCard
+        ? cardsData.find((card) => card.id === newSelectedCard)
+        : null
+    );
+  };
+
   return (
-    <div
-      className="main-container-cg"
-      onMouseLeave={() => {
-        setHoveredCard(null);
-        projectInfoEl.classList.add("hidden-cg");
-      }}
-    >
+    <div className="main-container-cg">
       <div className="portfolio-container-cg">
         <div className="project-links-cg">
           {cardsData.map((card) => (
-            <div
-              key={card.id}
-              className="project-link-title-cg"
-              onMouseEnter={() => {
-                setHoveredCard(card.id);
-                projectInfoEl.classList.remove("hidden-cg");
-              }}
-            >
-              <a href={card.link} target="_blank">
-                <p>{card.title}</p>
-              </a>
+            <div>
+              <div
+                key={card.id}
+                className={`project-link-title-cg ${
+                  selectedCard === card.id ? "active" : ""
+                } ${isMobile ? "mobile" : ""}`}
+                onMouseEnter={() => !isMobile && handleCardClick(card.id)}
+              >
+                <a
+                  href={card.link}
+                  target="_blank"
+                  onClick={(e) => {
+                    isMobile && e.preventDefault();
+                    handleCardClick(card.id);
+                  }}
+                >
+                  <p>{card.title}</p>
+                </a>
+                {isMobile && selectedCard === card.id && (
+                  <ProjectInfo card={card} />
+                )}
+              </div>
             </div>
           ))}
         </div>
-        <div className="project-info-cg hidden-cg">
-          {hoveredCard && (
-            <>
-              <img
-                src={cardsData[hoveredCard - 1].imageUrl}
-                className="project-thumbnail-cg"
-              />
-              <p>{cardsData[hoveredCard - 1].description}</p>
-              <a href={cardsData[hoveredCard - 1].repoLink} target="_blank">
-                <img
-                  src="/github_yl_icon.png"
-                  className="project-github-icon-cg"
-                  alt="GitHub"
-                />
-              </a>
-            </>
-          )}
+        <div className="project-info-cg">
+          {!isMobile && selectedCard && <ProjectInfo card={selectedCardData} />}
         </div>
       </div>
     </div>

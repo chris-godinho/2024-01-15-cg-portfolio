@@ -10,7 +10,7 @@ export default function Resume() {
       </p>
       <div className="proficiencies-container-cg">
         <div className="proficiencies-column-cg">
-          <p className="subtitle-cg">Front-end Proficiencies</p>
+          <p className="proficiencies-title-cg subtitle-cg">Front-end Proficiencies</p>
           <ul>
             <li>HTML</li>
             <li>CSS</li>
@@ -22,7 +22,7 @@ export default function Resume() {
           </ul>
         </div>
         <div className="proficiencies-column-cg">
-          <p className="subtitle-cg">Back-end Proficiencies</p>
+          <p className="proficiencies-title-cg subtitle-cg">Back-end Proficiencies</p>
           <ul>
             <li>APIs</li>
             <li>Node</li>
