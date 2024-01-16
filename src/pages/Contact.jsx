@@ -1,130 +1,94 @@
-import { useState, useEffect } from 'react';
-import { validateEmail } from '../utils/helpers';
+import { useState, useEffect } from "react";
+import { validateEmail } from "../utils/helpers";
 
 function Contact() {
-  const [senderName, setSenderName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  const [isFocused, setIsFocused] = useState(false);
+  const [senderName, setSenderName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleInputChange = (e) => {
     const { target } = e;
     const inputType = target.name;
     const inputValue = target.value;
 
-    setErrorMessage('');
+    setErrorMessage("");
 
-    if (inputType === 'senderName') {
+    if (inputType === "senderName") {
       setSenderName(inputValue);
-    } else if (inputType === 'email') {
+    } else if (inputType === "email") {
       setEmail(inputValue);
     } else {
       setMessage(inputValue);
     }
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      setErrorMessage('');
-      if (isFocused) {
-        if (!senderName) {
-          setErrorMessage('Please enter your name.');
-          return;
-        }
-        if (!validateEmail(email) || !email) {
-          setErrorMessage('Please enter a valid email address.');
-          return;
-        }
-        if (!message) {
-          setErrorMessage('Please enter a message.');
-          return;
-        }
-      }
-    };
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, [isFocused, senderName, email, message]);
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (!senderName) {
-      setErrorMessage('Please enter your name.');
+      setErrorMessage("Please enter your name.");
       return;
     }
     if (!validateEmail(email) || !email) {
-      setErrorMessage('Please enter a valid email address.');
+      setErrorMessage("Please enter a valid email address.");
       return;
     }
     if (!message) {
-      setErrorMessage('Please enter a message.');
+      setErrorMessage("Please enter a message.");
       return;
     }
 
-    setSenderName('');
-    setEmail('');
-    setMessage('');
+    setSenderName("");
+    setEmail("");
+    setMessage("");
     alert(`Message sent!`);
   };
 
   return (
-    <div className="resume-block">
-      <h1>Contact Me</h1>
-      <form onSubmit={handleFormSubmit}>
-      <div className="mb-3">
-        <label htmlFor="exampleFormControlInput1" className="form-label">Name</label>
+    <div className="main-container-cg">
+      <p className="subtitle-cg contact-title-cg">Contact Me</p>
+      <form className="form-container-cg" onSubmit={handleFormSubmit}>
+        <label htmlFor="exampleFormControlInput1" className="hidden-cg">
+          Name
+        </label>
         <input
           value={senderName}
           name="senderName"
           onChange={handleInputChange}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
           type="senderName"
-          placeholder="Your name here"
+          placeholder="name"
           className="form-control"
           id="exampleFormControlInput1"
         />
-      </div>
-      <div className="mb-3">
-        <label htmlFor="exampleFormControlInput2" className="form-label">E-mail</label>
+        <label htmlFor="exampleFormControlInput2" className="hidden-cg">
+          Name
+        </label>
         <input
           value={email}
           name="email"
           onChange={handleInputChange}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
           type="email"
-          placeholder="youremail@here.com"
+          placeholder="email address"
           className="form-control"
           id="exampleFormControlInput2"
         />
-      </div>
-      <div className="mb-3">
-        <label htmlFor="exampleFormControlTextarea1" className="form-label">Message</label>
+        <label htmlFor="exampleFormControlTextarea1" className="hidden-cg">
+          Name
+        </label>
         <textarea
           value={message}
           name="message"
           onChange={handleInputChange}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
           type="message"
-          placeholder="Your message here"
+          placeholder="your message"
           className="form-control"
           id="exampleFormControlTextarea1"
           rows="10"
         />
-      </div>
-        <button type="submit" className="btn custom-btn">
+        <button type="submit" className="contact-submit-button-cg button-cg">
           Submit
         </button>
       </form>
-      {errorMessage && (
-        <div>
-          <p className="error-text">{errorMessage}</p>
-        </div>
-      )}
     </div>
   );
 }

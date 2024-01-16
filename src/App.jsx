@@ -1,13 +1,12 @@
 // App.jsx
 
 import { useState } from "react";
-import Header from "./pages/components/Header";
 import AboutMe from "./pages/AboutMe";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import Resume from "./pages/Resume";
 import ErrorPage from "./pages/ErrorPage";
-import Footer from "./pages/components/Footer";
+import Title from "./pages/components/Title";
 import "./App.css";
 
 const App = () => {
@@ -33,11 +32,10 @@ const App = () => {
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <div>
-      <Header currentPage={currentPage} handlePageChange={handlePageChange} />
-      <main className="main-cg">{renderPage()}</main>
-      <Footer />
-    </div>
+    <main className="main-cg">
+      {renderPage()}
+      <Title currentPage={currentPage} handlePageChange={handlePageChange} />
+    </main>
   );
 };
 
