@@ -579,6 +579,7 @@ textarea {
     margin-bottom: 0;
     align-self: flex-end;
     padding-bottom: 3px;
+    padding-left: 20px;
   }
 
   .nav-link-cg {
