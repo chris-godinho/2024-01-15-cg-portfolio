@@ -1,11 +1,18 @@
+// Portfolio.jsx
+
 import React, { useState, useEffect } from "react";
+
+// Import ProjectInfo component
 import ProjectInfo from "./components/ProjectInfo";
 
 export default function Portfolio() {
   const [selectedCard, setSelectedCard] = useState(null);
   const [selectedCardData, setSelectedCardData] = useState(null);
+
+  // Check if the screen is mobile
   const isMobile = window.innerWidth <= 768;
 
+  // Define project data
   const cardsData = [
     {
       id: 1,
@@ -63,6 +70,7 @@ export default function Portfolio() {
     },
   ];
 
+  // Preload all thumbnail images for performance improvement
   const preloadImages = () => {
     cardsData.forEach((card) => {
       const img = new Image();
@@ -74,6 +82,7 @@ export default function Portfolio() {
     preloadImages();
   }, []);
 
+  // Handle project name click/hover
   const handleCardClick = (cardId) => {
     const newSelectedCard = selectedCard === cardId ? null : cardId;
     setSelectedCard(newSelectedCard);

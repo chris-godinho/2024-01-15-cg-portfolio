@@ -1,3 +1,5 @@
+// Resume.jsx
+
 export default function Resume() {
   return (
     <div className="main-container-cg">

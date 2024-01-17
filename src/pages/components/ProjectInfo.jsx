@@ -1,24 +1,24 @@
-// ProjectInfo.js
+// ProjectInfo.jsx
+
 import React, { useState, useEffect } from "react";
 
 export default function ProjectInfo({ card }) {
+
+  // Define state variable and function for light/dark mode
   const [isLightMode, setIsLightMode] = useState(
     document.getElementById("root").classList.contains("light-mode-cg")
   );
 
+  // Watch for changes to light/dark mode
   useEffect(() => {
-    // Callback function when mutation occurs
     const handleMutation = () => {
       setIsLightMode(document.getElementById("root").classList.contains("light-mode-cg"));
     };
 
-    // Create a MutationObserver instance
     const observer = new MutationObserver(handleMutation);
 
-    // Observe changes to the class attribute of #root
     observer.observe(document.getElementById("root"), { attributes: true });
 
-    // Clean up the observer when the component unmounts
     return () => {
       observer.disconnect();
     };

@@ -1,8 +1,14 @@
+// Title.jsx
+
 import { useEffect } from "react";
 import React from "react";
+
+// Import SocialIcons component
 import SocialIcons from "./SocialIcons";
 
 function Title({ currentPage, handlePageChange }) {
+
+  // Define state variable and function for light/dark mode in desktop view
   const [isLightMode, setIsLightMode] = React.useState(
     localStorage.getItem("isLightMode") === "true"
     ? true
@@ -13,6 +19,7 @@ function Title({ currentPage, handlePageChange }) {
     document.getElementById("root").classList.toggle("light-mode-cg", isLightMode);
   }, [isLightMode]);
 
+  // Define function for toggling light/dark mode in desktop view
   const toggleTheme = () => {
     setIsLightMode((prevMode) => {
       const newMode = !prevMode;

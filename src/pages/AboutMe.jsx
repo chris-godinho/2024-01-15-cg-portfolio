@@ -1,8 +1,14 @@
+// AboutMe.jsx
+
 import { useEffect } from "react";
 import React from "react";
+
+// Import SocialIcons component
 import SocialIcons from "./components/SocialIcons";
 
 export default function AboutMe() {
+
+  // Define state variable and function for light/dark mode in mobile view
   const [isLightMode, setIsLightMode] = React.useState(
     localStorage.getItem("isLightMode") === "true"
     ? true
@@ -13,6 +19,7 @@ export default function AboutMe() {
     document.getElementById("root").classList.toggle("light-mode-cg", isLightMode);
   }, [isLightMode]);
 
+  // Define function for toggling light/dark mode in mobile view
   const toggleTheme = () => {
     setIsLightMode((prevMode) => {
       const newMode = !prevMode;

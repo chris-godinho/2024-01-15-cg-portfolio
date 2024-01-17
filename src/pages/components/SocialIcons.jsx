@@ -1,3 +1,5 @@
+// SocialIcons.jsx
+
 import React from "react";
 
 const SocialIcons = ({isLightMode}) => {

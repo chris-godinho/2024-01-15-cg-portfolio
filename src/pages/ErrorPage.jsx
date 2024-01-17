@@ -1,3 +1,5 @@
+// ErrorPage.jsx
+
 export default function AboutMe() {
     return (
       <div>

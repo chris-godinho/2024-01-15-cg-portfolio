@@ -1,14 +1,23 @@
+// Contact.jsx
+
 import { useState } from "react";
 import { validateEmail } from "../utils/helpers";
+
+// Import PopUpModal component
 import PopUpModal from "./components/PopUpModal";
 
+// Define HeroTofu form endpoint
 const FORM_ENDPOINT =
   "https://public.herotofu.com/v1/eeadf220-b429-11ee-9dd2-c1caafee32ff";
 
 function Contact() {
+
+  // Define fields state variables for the form
   const [senderName, setSenderName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  // Define state variables and functions for modal display
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
 
@@ -20,6 +29,7 @@ function Contact() {
     setIsModalOpen(false);
   };
 
+  // Define functions for handling form input changes and form submission
   const handleInputChange = (e) => {
     const { target } = e;
     const inputType = target.name;
@@ -37,7 +47,11 @@ function Contact() {
   };
 
   const handleFormSubmit = (e) => {
+    
+    // Prevent default form submission behavior
     e.preventDefault();
+
+    // Validate form input
     if (!senderName) {
       setModalMessage("Please enter your name.");
       openModal();
@@ -54,6 +68,7 @@ function Contact() {
       return;
     }
 
+    // Define data object for form submission
     const inputs = e.target.elements;
     const data = {};
 
@@ -63,6 +78,7 @@ function Contact() {
       }
     }
 
+    // Submit form data to HeroTofu form endpoint
     fetch(FORM_ENDPOINT, {
       method: "POST",
       headers: {

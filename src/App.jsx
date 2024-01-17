@@ -1,6 +1,8 @@
 // App.jsx
 
 import { useState } from "react";
+
+// Import all pages
 import AboutMe from "./pages/AboutMe";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
@@ -9,6 +11,7 @@ import ErrorPage from "./pages/ErrorPage";
 import Title from "./pages/components/Title";
 import "./App.css";
 
+// Define the App component and render all pages
 const App = () => {
   const [currentPage, setCurrentPage] = useState("AboutMe");
 
@@ -31,6 +34,7 @@ const App = () => {
 
   const handlePageChange = (page) => setCurrentPage(page);
 
+  // Return the App component
   return (
     <main className="main-cg">
       {renderPage()}

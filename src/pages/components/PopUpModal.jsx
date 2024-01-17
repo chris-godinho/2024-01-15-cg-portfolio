@@ -1,6 +1,10 @@
+// PopUpModal.jsx
+
 import React from 'react';
 
 const PopUpModal = ({ isOpen, onClose, children }) => {
+
+  // Function to close the modal
   const closeModal = () => {
     onClose();
   };
