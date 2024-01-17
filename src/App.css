@@ -6,7 +6,7 @@
 
   --box-background-color: rgba(219, 157, 71, 1);
   --box-shadow-color: rgba(0, 0, 0, 0.6);
-  --input-background-color: rgba(249, 248, 248, 1);
+  --input-background-color: rgba(239, 238, 238, 1);
   --input-text-color: rgba(34, 38, 47, 1);
 
   --button-background-color: rgba(219, 157, 71, 1);
@@ -18,7 +18,7 @@
   --button-text-color-focus: rgba(34, 38, 47, 1);
   --button-text-color-active: rgba(34, 38, 47, 1);
 
-  --text-dark-on-light-color: rgba(249, 248, 248, 1);
+  --text-dark-on-light-color: rgba(239, 238, 238, 1);
   --text-light-on-dark-color: rgba(28, 31, 51, 1);
   --link-text-color: rgba(219, 157, 71, 1);
 
@@ -26,25 +26,25 @@
 }
 
 #root.light-mode-cg {
-  --main-background-color: rgba(249, 248, 248, 1);
-  --secondary-background-color: rgba(229, 228, 228, 1);
+  --main-background-color: rgba(239, 238, 238, 1);
+  --secondary-background-color: rgba(219, 218, 218, 1);
 
   --box-background-color: rgba(147, 3, 46, 1);
   --box-shadow-color: rgba(0, 0, 0, 0.25);
-  --input-background-color: rgba(249, 248, 248, 1);
+  --input-background-color: rgba(239, 238, 238, 1);
   --input-text-color: rgba(34, 38, 47, 1);
 
   --button-background-color: rgba(147, 3, 46, 1);
   --button-background-color-hover: rgba(207, 63, 106, 1);
   --button-background-color-focus: rgba(187, 43, 86, 1);
   --button-background-color-active: rgba(167, 23, 66, 1);
-  --button-text-color: rgba(249, 248, 248, 1);
-  --button-text-color-hover: rgba(249, 248, 248, 1);
-  --button-text-color-focus: rgba(249, 248, 248, 1);
-  --button-text-color-active: rgba(249, 248, 248, 1);
+  --button-text-color: rgba(239, 238, 238, 1);
+  --button-text-color-hover: rgba(239, 238, 238, 1);
+  --button-text-color-focus: rgba(239, 238, 238, 1);
+  --button-text-color-active: rgba(239, 238, 238, 1);
 
   --text-dark-on-light-color: rgba(28, 31, 51, 1);
-  --text-light-on-dark-color: rgba(249, 248, 248, 1);
+  --text-light-on-dark-color: rgba(239, 238, 238, 1);
   --link-text-color: rgba(147, 3, 46, 1);
 
   --main-font-family: "Raleway", sans-serif;
