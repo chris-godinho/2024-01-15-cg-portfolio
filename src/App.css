@@ -571,6 +571,8 @@ textarea {
     transform: rotate(180deg);
     white-space: nowrap;
     align-self: center;
+    height: 88vh;
+    max-height: 88vh;
   }
 
   .title-navbar-cg {
