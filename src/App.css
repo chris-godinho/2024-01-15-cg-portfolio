@@ -568,6 +568,7 @@ textarea {
     flex-direction: column;
     margin-bottom: 0;
     align-self: flex-end;
+    padding-left: 10vw;
   }
 
   .nav-link-cg {
