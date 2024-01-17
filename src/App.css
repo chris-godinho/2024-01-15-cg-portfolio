@@ -574,12 +574,12 @@ textarea {
   }
 
   .title-navbar-cg {
+    position: absolute;
     font-size: 2em;
     flex-direction: column;
     margin-bottom: 0;
     align-self: flex-end;
-    padding-bottom: 3px;
-    padding-left: 20px;
+    left: 60%;
   }
 
   .nav-link-cg {
