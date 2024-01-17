@@ -37,7 +37,8 @@ const App = () => {
   // Return the App component
   return (
     <main className="main-cg">
-      {renderPage()}
+      <div className="main-container-wrapper-cg">{renderPage()}</div>
+      
       <Title currentPage={currentPage} handlePageChange={handlePageChange} />
     </main>
   );
