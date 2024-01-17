@@ -374,6 +374,10 @@ textarea {
     overflow-x: hidden;
   }
 
+  #root {
+    padding-bottom: 10vh;
+  }
+
   .main-container-wrapper-cg {
     flex: 1;
     max-width: 65%;
