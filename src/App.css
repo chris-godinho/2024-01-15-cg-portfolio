@@ -363,6 +363,10 @@ textarea {
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    overflow-y: auto;
+  }
+
   .main-container-wrapper-cg {
     flex: 1;
     max-width: 65%;
