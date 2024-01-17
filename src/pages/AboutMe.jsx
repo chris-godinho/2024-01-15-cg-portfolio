@@ -4,7 +4,9 @@ import SocialIcons from "./components/SocialIcons";
 
 export default function AboutMe() {
   const [isLightMode, setIsLightMode] = React.useState(
-    localStorage.getItem("isLightMode") === "false" ? false : true
+    localStorage.getItem("isLightMode") === "true"
+    ? true
+    : false
   );
 
   useEffect(() => {
