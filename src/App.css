@@ -505,6 +505,148 @@ textarea {
   }
 }
 
+@media screen and (max-width: 768px) and (max-height: 480px) {
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  #root {
+    padding-bottom: 100vh;
+  }
+
+  .main-container-wrapper-cg {
+    flex: 1;
+    max-width: 65%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30vw;
+    text-align: right;
+    padding: 0;
+    animation: moveLeft 1s ease forwards;
+  }
+
+  .mobile-icons-cg {
+    display: block;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .subtitle-cg {
+    font-size: 1em;
+  }
+
+  .title-cg {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.65em;
+    flex: 0 0 auto;
+    border: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 0;
+    padding-left: 3vw;
+    padding-top: 4vh;
+    padding-bottom: 2vh;
+    width: 15vw;
+    animation: moveRight 1s ease forwards;
+  }
+
+  .title-lettering-cg {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    align-self: center;
+  }
+
+  .title-navbar-cg {
+    font-size: 2em;
+    flex-direction: column;
+    margin-bottom: 0;
+    align-self: flex-end;
+  }
+
+  .nav-link-cg {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .desktop-icons-cg {
+    display: none;
+  }
+
+  .navbar-icons-cg {
+    justify-content: flex-end;
+  }
+
+  .navbar-icons-cg a {
+    margin-right: 0px;
+    margin-left: 20px;
+  }
+
+  .mobile-icons-cg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .app-link-icon-cg {
+    display: block;
+  }
+
+  .about-me-container-cg p {
+    font-size: 0.9em;
+  }
+
+  .portfolio-container-cg {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .project-links-cg {
+    min-width: 100%;
+  }
+
+  .project-info-cg {
+    display: none;
+  }
+
+  .project-thumbnail-cg {
+    height: 15vh;
+  }
+
+  .resume-download-cg {
+    text-align: right;
+    font-size: 1em;
+    margin-bottom: 10vh;
+  }
+
+  .proficiencies-container-cg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    width: 100%;
+  }
+
+  .proficiencies-title-cg {
+    font-size: 0.9em;
+  }
+
+  .form-container-cg {
+    align-items: flex-end;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+  }
+}
+
 @keyframes moveUp {
   from {
       transform: translateY(700px);
