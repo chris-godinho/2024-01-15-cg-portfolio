@@ -51,7 +51,8 @@
 }
 
 /* Global styles */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
 }
@@ -507,12 +508,14 @@ textarea {
 
 @media screen and (max-width: 896px) and (max-height: 480px) {
   body {
-    overflow-y: auto;
+    overflow-y: visible;
     overflow-x: hidden;
   }
 
   #root {
-    padding-bottom: 100vh;
+    padding-top: 30vh;
+    padding-bottom: 50vh;
+    overflow-x: hidden;
   }
 
   .main-container-wrapper-cg {
@@ -524,6 +527,8 @@ textarea {
     text-align: right;
     padding: 0;
     animation: moveLeft 1s ease forwards;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .mobile-icons-cg {
@@ -532,6 +537,11 @@ textarea {
 
   p {
     font-size: 1em;
+  }
+
+  input,
+  textarea {
+    max-width: 90%;
   }
 
   .subtitle-cg {
@@ -568,7 +578,7 @@ textarea {
     flex-direction: column;
     margin-bottom: 0;
     align-self: flex-end;
-    padding-left: 10vw;
+    padding-bottom: 3px;
   }
 
   .nav-link-cg {
@@ -650,36 +660,36 @@ textarea {
 
 @keyframes moveUp {
   from {
-      transform: translateY(700px);
+    transform: translateY(700px);
   }
   to {
-      transform: translateY(0px);
+    transform: translateY(0px);
   }
 }
 
 @keyframes moveDown {
   from {
-      transform: translateY(-700px);
+    transform: translateY(-700px);
   }
   to {
-      transform: translateY(0px);
+    transform: translateY(0px);
   }
 }
 
 @keyframes moveRight {
   from {
-      transform: translateX(-300px);
+    transform: translateX(-300px);
   }
   to {
-      transform: translateX(0px);
+    transform: translateX(0px);
   }
 }
 
 @keyframes moveLeft {
   from {
-      transform: translateX(700px);
+    transform: translateX(700px);
   }
   to {
-      transform: translateX(0px);
+    transform: translateX(0px);
   }
 }

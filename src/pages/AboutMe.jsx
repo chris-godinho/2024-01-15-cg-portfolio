@@ -7,16 +7,15 @@ import React from "react";
 import SocialIcons from "./components/SocialIcons";
 
 export default function AboutMe() {
-
   // Define state variable and function for light/dark mode in mobile view
   const [isLightMode, setIsLightMode] = React.useState(
-    localStorage.getItem("isLightMode") === "true"
-    ? true
-    : false
+    localStorage.getItem("isLightMode") === "true" ? true : false
   );
 
   useEffect(() => {
-    document.getElementById("root").classList.toggle("light-mode-cg", isLightMode);
+    document
+      .getElementById("root")
+      .classList.toggle("light-mode-cg", isLightMode);
   }, [isLightMode]);
 
   // Define function for toggling light/dark mode in mobile view
@@ -32,9 +31,19 @@ export default function AboutMe() {
       .classList.toggle("light-mode-cg", !isLightMode);
   };
 
+  // Get the element you want to scroll to
+  const targetElement = document.getElementById("about-me-text-cg");
+
+  // Scroll to the target element on page load
+  if (targetElement) {
+    targetElement.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <div className="main-container-cg about-me-container-cg">
-      <p>I am a Full Stack Developer based in Mississauga, Ontario, Canada.</p>
+      <p id="about-me-text-cg">
+        I am a Full Stack Developer based in Mississauga, Ontario, Canada.
+      </p>
       <p>
         My journey in the world of web development is fueled by a desire to turn
         innovative ideas into tangible digital reality.
@@ -55,7 +64,7 @@ export default function AboutMe() {
             {isLightMode ? "clear_night" : "clear_day"}
           </span>
         </a>
-        <SocialIcons isLightMode={isLightMode}/>
+        <SocialIcons isLightMode={isLightMode} />
       </div>
     </div>
   );

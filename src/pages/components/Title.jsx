@@ -34,12 +34,12 @@ function Title({ currentPage, handlePageChange }) {
 
   return (
     <div className="title-cg">
-      <a href="#about-me" onClick={() => handlePageChange("AboutMe")}>
+      <a href="#about-me-text-cg" onClick={() => handlePageChange("AboutMe")}>
         <p className="title-lettering-cg">Chris Godinho</p>
       </a>
       <div className="title-navbar-cg">
         <a
-          href="#about-me"
+          href="#about-me-text-cg"
           onClick={() => handlePageChange("AboutMe")}
           className={
             currentPage === "AboutMe" ? "nav-link-cg active" : "nav-link-cg"
@@ -48,7 +48,7 @@ function Title({ currentPage, handlePageChange }) {
           About
         </a>
         <a
-          href="#portfolio"
+          href="#portfolio-text-cg"
           onClick={() => handlePageChange("Portfolio")}
           className={
             currentPage === "Portfolio" ? "nav-link-cg active" : "nav-link-cg"
@@ -57,7 +57,7 @@ function Title({ currentPage, handlePageChange }) {
           Portfolio
         </a>
         <a
-          href="#resume"
+          href="#resume-text-cg"
           onClick={() => handlePageChange("Resume")}
           className={
             currentPage === "Resume" ? "nav-link-cg active" : "nav-link-cg"
@@ -66,7 +66,7 @@ function Title({ currentPage, handlePageChange }) {
           Resume
         </a>
         <a
-          href="#contact"
+          href="#contact-text-cg"
           onClick={() => handlePageChange("Contact")}
           className={
             currentPage === "Contact" ? "nav-link-cg active" : "nav-link-cg"
