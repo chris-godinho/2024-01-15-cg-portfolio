@@ -105,7 +105,8 @@ function Contact() {
 
   return (
     <div className="main-container-cg">
-      <p id="contact-text-cg" className="subtitle-cg contact-title-cg">Contact Me</p>
+      <br id="contact-text-cg" />
+      <p className="subtitle-cg contact-title-cg">Contact Me</p>
       <form className="form-container-cg" onSubmit={handleFormSubmit}>
         <label htmlFor="exampleFormControlInput1" className="hidden-cg">
           Name

@@ -513,7 +513,7 @@ textarea {
   }
 
   #root {
-    padding-top: 30vh;
+    padding-top: 1vh;
     padding-bottom: 50vh;
     overflow-x: hidden;
   }

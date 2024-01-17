@@ -3,6 +3,7 @@
 export default function Resume() {
   return (
     <div className="main-container-cg">
+      <br id="resume-text-cg" />
       <p id="resume-text-cg" className="resume-download-cg">
         Download my resume{" "}
         <a href="https://docs.google.com/document/d/1oHfp0Zw0S1CexVn-jCCvScdmft3Augxm/edit?usp=sharing&ouid=107944760408865609427&rtpof=true&sd=true" target="_blank">

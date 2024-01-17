@@ -99,8 +99,9 @@ export default function Portfolio() {
     <div className="main-container-cg">
       <div className="portfolio-container-cg">
         <div className="project-links-cg">
+          <br id="portfolio-text-cg" />
           {cardsData.map((card) => (
-            <div id="portfolio-text-cg">
+            <div>
               <div
                 key={card.id}
                 className={`project-link-title-cg ${
