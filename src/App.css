@@ -558,9 +558,7 @@ textarea {
     left: 0;
     top: 0;
     padding: 0;
-    padding-left: 3vw;
-    padding-top: 4vh;
-    padding-bottom: 2vh;
+    height: 95vh;
     width: 15vw;
     animation: moveRight 1s ease forwards;
   }
@@ -570,18 +568,19 @@ textarea {
     text-orientation: mixed;
     transform: rotate(180deg);
     white-space: nowrap;
-    align-self: center;
-    height: 88vh;
-    max-height: 88vh;
+    position: absolute;
+    top: 8%;
+    left: 15%;
   }
 
   .title-navbar-cg {
     position: absolute;
     font-size: 2em;
     flex-direction: column;
-    margin-bottom: 0;
-    align-self: flex-end;
-    left: 60%;
+    padding: 0;
+    margin: 0;
+    top: 64%;
+    left: 70%;
   }
 
   .nav-link-cg {
