@@ -33,7 +33,7 @@ export default function AboutMe() {
   };
 
   return (
-    <div className="main-container-cg">
+    <div className="main-container-cg about-me-container-cg">
       <p>I am a Full Stack Developer based in Mississauga, Ontario, Canada.</p>
       <p>
         My journey in the world of web development is fueled by a desire to turn

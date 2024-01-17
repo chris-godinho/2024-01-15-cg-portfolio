@@ -363,11 +363,6 @@ textarea {
 }
 
 @media screen and (max-width: 768px) {
-  body {
-    overflow-y: auto;
-    height: 100%;
-  }
-
   .main-container-wrapper-cg {
     flex: 1;
     max-width: 65%;
@@ -444,6 +439,10 @@ textarea {
 
   .app-link-icon-cg {
     display: block;
+  }
+
+  .about-me-container-cg p {
+    font-size: 0.9em;
   }
 
   .portfolio-container-cg {
