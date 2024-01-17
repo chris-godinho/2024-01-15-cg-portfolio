@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import React from "react";
 import SocialIcons from "./SocialIcons";
 
@@ -6,6 +7,10 @@ function Title({ currentPage, handlePageChange }) {
     localStorage.getItem("isLightMode") === "false" ? false : true
   );
 
+  useEffect(() => {
+    document.getElementById("root").classList.toggle("light-mode-cg", isLightMode);
+  }, [isLightMode]);
+
   const toggleTheme = () => {
     setIsLightMode((prevMode) => {
       const newMode = !prevMode;
@@ -13,7 +18,9 @@ function Title({ currentPage, handlePageChange }) {
       return newMode;
     });
 
-    document.getElementById("root").classList.toggle("light-mode-cg", !isLightMode);
+    document
+      .getElementById("root")
+      .classList.toggle("light-mode-cg", !isLightMode);
   };
 
   return (
@@ -60,9 +67,11 @@ function Title({ currentPage, handlePageChange }) {
         </a>
       </div>
       <div className="desktop-icons-cg">
-        <SocialIcons isLightMode={isLightMode}/>
+        <SocialIcons isLightMode={isLightMode} />
         <a href="#" onClick={toggleTheme}>
-          <span className="material-symbols-outlined color-mode-icon-cg">{isLightMode ? "clear_night" : "clear_day"}</span>
+          <span className="material-symbols-outlined color-mode-icon-cg">
+            {isLightMode ? "clear_night" : "clear_day"}
+          </span>
         </a>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import React from "react";
 import SocialIcons from "./components/SocialIcons";
 
@@ -5,6 +6,10 @@ export default function AboutMe() {
   const [isLightMode, setIsLightMode] = React.useState(
     localStorage.getItem("isLightMode") === "false" ? false : true
   );
+
+  useEffect(() => {
+    document.getElementById("root").classList.toggle("light-mode-cg", isLightMode);
+  }, [isLightMode]);
 
   const toggleTheme = () => {
     setIsLightMode((prevMode) => {
