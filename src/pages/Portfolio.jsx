@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProjectInfo from "./components/ProjectInfo";
 
 export default function Portfolio() {
@@ -62,6 +62,17 @@ export default function Portfolio() {
         "A simple application for obtaining the weather forecast for a given city, obtaining data through the OpenWeather API.",
     },
   ];
+
+  const preloadImages = () => {
+    cardsData.forEach((card) => {
+      const img = new Image();
+      img.src = card.imageUrl;
+    });
+  };
+
+  useEffect(() => {
+    preloadImages();
+  }, []);
 
   const handleCardClick = (cardId) => {
     const newSelectedCard = selectedCard === cardId ? null : cardId;
