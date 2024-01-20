@@ -21,7 +21,7 @@ export default function Portfolio() {
       link: "https://workflow-oj8s.onrender.com/",
       repoLink: "https://github.com/project3-team3/workflow-app",
       description:
-        "A productivity app with an emphasis on keeping a healthy work/life balance.",
+        "An office suite featuring highly customizable widgets, as well as text and video chat capabilities.",
     },
     {
       id: 2,
