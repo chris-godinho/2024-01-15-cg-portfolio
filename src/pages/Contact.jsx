@@ -149,6 +149,7 @@ function Contact() {
           Submit
         </button>
       </form>
+      <p>You can also <a href="mailto:cristianobgodinho@gmail.com">e-mail me</a> if you prefer.</p>
       <PopUpModal isOpen={isModalOpen} onClose={closeModal}>
         <p>{modalMessage}</p>
       </PopUpModal>

@@ -15,9 +15,6 @@ const SocialIcons = ({isLightMode}) => {
           alt="LinkedIn"
         />
       </a>
-      <a href="https://twitter.com/chris__godinho" target="_blank">
-        <img src={isLightMode ? "/x_bk_icon.png" : "/x_wt_icon.png"} className="icon-size-cg" alt="X" />
-      </a>
     </div>
   );
 };
