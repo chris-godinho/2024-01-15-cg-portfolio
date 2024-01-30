@@ -18,7 +18,7 @@ export default function Portfolio() {
       id: 1,
       imageUrl: "/project01_thumbnail.jpg",
       title: "Workflow",
-      link: "https://workflow-oj8s.onrender.com/",
+      link: "https://shrouded-reef-15269-7fdf3ccd76bb.herokuapp.com/",
       repoLink: "https://github.com/project3-team3/workflow-app",
       description:
         "An office suite featuring highly customizable widgets, as well as text and video chat capabilities.",
@@ -43,15 +43,6 @@ export default function Portfolio() {
     },
     {
       id: 4,
-      imageUrl: "/project04_thumbnail.jpg",
-      title: "JavaScript Quiz",
-      link: "https://chris-godinho.github.io/2023-08-03-javascript-quiz-game/",
-      repoLink:
-        "https://github.com/chris-godinho/2023-08-03-javascript-quiz-game",
-      description: "An interactive quiz game on basic JavaScript knowledge.",
-    },
-    {
-      id: 5,
       imageUrl: "/project05_thumbnail.jpg",
       title: "Chris' Tech Thoughts",
       link: "https://peaceful-dawn-48719-8b024e4e358e.herokuapp.com/",
@@ -60,7 +51,7 @@ export default function Portfolio() {
         "A blog where developers can publish their posts as well as comment on other developers'.",
     },
     {
-      id: 6,
+      id: 5,
       imageUrl: "/project06_thumbnail.jpg",
       title: "Weather Forecast",
       link: "https://chris-godinho.github.io/2023-08-21-weather-forecast/",
