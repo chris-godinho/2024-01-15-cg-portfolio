@@ -34,21 +34,21 @@ export default function Portfolio() {
     },
     {
       id: 3,
-      imageUrl: "/project02_thumbnail.jpg",
-      title: "Tune-Muse",
-      link: "https://tune-muse-team.github.io/tunemuse/",
-      repoLink: "https://github.com/tune-muse-team/tunemuse",
-      description:
-        "An AI-curated music application that provides song recommendations based on a set of parameters and text queries entered by the user.",
-    },
-    {
-      id: 4,
       imageUrl: "/project03_thumbnail.jpg",
       title: "TravIS",
       link: "https://travis231017-9762a24c277b.herokuapp.com/",
       repoLink: "https://github.com/UofTTeam2/TravIS",
       description:
         "TravIS (or TRAVel Interface System) is a useful tool for planning your next trip and discovering new horizons to explore.",
+    },
+    {
+      id: 4,
+      imageUrl: "/project02_thumbnail.jpg",
+      title: "Tune-Muse",
+      link: "https://tune-muse-team.github.io/tunemuse/",
+      repoLink: "https://github.com/tune-muse-team/tunemuse",
+      description:
+        "An AI-curated music application that provides song recommendations based on a set of parameters and text queries entered by the user.",
     },
     {
       id: 5,
