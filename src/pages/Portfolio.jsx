@@ -16,6 +16,15 @@ export default function Portfolio() {
   const cardsData = [
     {
       id: 1,
+      imageUrl: "/project06_thumbnail.jpg",
+      title: "Juggler",
+      link: "https://juggler-8f9213eba85d.herokuapp.com/",
+      repoLink: "https://github.com/chris-godinho/juggler",
+      description:
+        "A schedule and task management app with a focus on maintaining a healthy work/life balance.",
+    },
+    {
+      id: 2,
       imageUrl: "/project01_thumbnail.jpg",
       title: "Workflow",
       link: "https://shrouded-reef-15269-7fdf3ccd76bb.herokuapp.com/",
@@ -24,7 +33,7 @@ export default function Portfolio() {
         "An office suite featuring highly customizable widgets, as well as text and video chat capabilities.",
     },
     {
-      id: 2,
+      id: 3,
       imageUrl: "/project02_thumbnail.jpg",
       title: "Tune-Muse",
       link: "https://tune-muse-team.github.io/tunemuse/",
@@ -33,7 +42,7 @@ export default function Portfolio() {
         "An AI-curated music application that provides song recommendations based on a set of parameters and text queries entered by the user.",
     },
     {
-      id: 3,
+      id: 4,
       imageUrl: "/project03_thumbnail.jpg",
       title: "TravIS",
       link: "https://travis231017-9762a24c277b.herokuapp.com/",
@@ -42,23 +51,14 @@ export default function Portfolio() {
         "TravIS (or TRAVel Interface System) is a useful tool for planning your next trip and discovering new horizons to explore.",
     },
     {
-      id: 4,
+      id: 5,
       imageUrl: "/project05_thumbnail.jpg",
       title: "Chris' Tech Thoughts",
       link: "https://peaceful-dawn-48719-8b024e4e358e.herokuapp.com/",
       repoLink: "https://github.com/chris-godinho/2023-10-19-MVC-tech-blog",
       description:
         "A blog where developers can publish their posts as well as comment on other developers'.",
-    },
-    {
-      id: 5,
-      imageUrl: "/project06_thumbnail.jpg",
-      title: "Weather Forecast",
-      link: "https://chris-godinho.github.io/2023-08-21-weather-forecast/",
-      repoLink: "https://github.com/chris-godinho/2023-08-21-weather-forecast",
-      description:
-        "A simple application for obtaining the weather forecast for a given city, obtaining data through the OpenWeather API.",
-    },
+    }
   ];
 
   // Preload all thumbnail images for performance improvement
