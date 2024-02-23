@@ -2,11 +2,14 @@
 
 import { useState } from "react";
 
+import { ModalProvider } from "./pages/context/ModalProvider.jsx";
+
 // Import all pages
 import AboutMe from "./pages/AboutMe";
 import Portfolio from "./pages/Portfolio";
-import Contact from "./pages/Contact";
 import Resume from "./pages/Resume";
+import Personal from "./pages/Personal";
+import Contact from "./pages/Contact";
 import ErrorPage from "./pages/ErrorPage";
 import Title from "./pages/components/Title";
 import "./App.css";
@@ -22,25 +25,29 @@ const App = () => {
     if (currentPage === "Portfolio") {
       return <Portfolio />;
     }
+    if (currentPage === "Resume") {
+      return <Resume />;
+    }
+    if (currentPage === "Personal") {
+      return <Personal />;
+    }
     if (currentPage === "Contact") {
       return <Contact />;
     }
-    if (currentPage === "Resume") {
-      return <Resume />;
-    } else {
-      return <ErrorPage />;
-    }
+    return <ErrorPage />;
   };
 
   const handlePageChange = (page) => setCurrentPage(page);
 
   // Return the App component
   return (
-    <main className="main-cg">
-      <div className="main-container-wrapper-cg">{renderPage()}</div>
-      
-      <Title currentPage={currentPage} handlePageChange={handlePageChange} />
-    </main>
+    <ModalProvider>
+      <main className="main-cg">
+        <div className="main-container-wrapper-cg">{renderPage()}</div>
+
+        <Title currentPage={currentPage} handlePageChange={handlePageChange} />
+      </main>
+    </ModalProvider>
   );
 };
 

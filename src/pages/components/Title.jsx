@@ -66,6 +66,15 @@ function Title({ currentPage, handlePageChange }) {
           Resume
         </a>
         <a
+          href="#resume-text-cg"
+          onClick={() => handlePageChange("Personal")}
+          className={
+            currentPage === "Personal" ? "nav-link-cg active" : "nav-link-cg"
+          }
+        >
+          Personal
+        </a>
+        <a
           href="#contact-text-cg"
           onClick={() => handlePageChange("Contact")}
           className={

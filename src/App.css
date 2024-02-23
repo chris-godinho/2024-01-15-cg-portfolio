@@ -92,10 +92,12 @@ a {
   color: var(--link-text-color);
   text-decoration: none;
   cursor: pointer;
+  transition: color 0.2s ease-in-out, brightness 0.2s ease-in-out;
 }
 
 a:hover {
   color: var(--button-background-color-hover);
+  filter: brightness(120%);
 }
 
 ul {
@@ -149,29 +151,36 @@ textarea {
   display: none;
 }
 
-.modal-cg {
-  display: none;
+.modal-overlay-cg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--box-shadow-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--box-shadow-color); /* Semi-transparent black overlay */
+  z-index: 1010; /* Make sure the overlay is on top of other elements */
 }
 
-.modal-cg.open {
-  display: block;
+.modal-cg {
+  display: flex;
+  flex-direction: column;
+  background: var(--main-background-color);
+  padding: 2em 3em;
+  border-radius: 10px;
+  z-index: 1009;
+  text-align: center;
+  box-shadow: 10px 10px 7px 5px var(--box-shadow-color);
 }
 
 .modal-content-cg {
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--main-background-color);
-  padding: 25px;
-  border-radius: 10px;
+  position: relative;
+}
+
+.modal-message-cg {
+  margin-bottom: 1.5em;
 }
 
 .material-symbols-outlined {
@@ -249,6 +258,12 @@ textarea {
 
 .navbar-icons-cg a {
   margin-right: 20px;
+  opacity: 0.3;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.navbar-icons-cg a:hover {
+  opacity: 1;
 }
 
 .navbar-icons-cg img {
@@ -259,6 +274,11 @@ textarea {
   color: var(--text-dark-on-light-color);
   opacity: 0.3;
   padding-top: 10px;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.color-mode-icon-cg:hover {
+  opacity: 1;
 }
 
 /* About Me Component styles */
@@ -324,6 +344,16 @@ textarea {
   flex-direction: column;
   max-width: 45%;
   flex: 1;
+}
+
+/* Personal Component styles */
+.headshot-cg {
+  height: 30vh;
+  float: left;
+  border-radius: 1em;
+  border: 1px solid var(--box-background-color);
+  margin-right: 2em;
+  margin-bottom: 1em;
 }
 
 /* Contact Component styles */
@@ -498,6 +528,18 @@ textarea {
 
   .form-container-cg {
     align-items: flex-end;
+  }
+
+  .headshot-cg {
+    height: 20vh;
+    float: right;
+    margin: 0;
+    margin-left: 1em;
+    margin-bottom: 1em;
+  }
+
+  .personal-text-cg {
+    font-size: 0.9em;
   }
 
   input,

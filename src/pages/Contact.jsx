@@ -3,8 +3,9 @@
 import { useState } from "react";
 import { validateEmail } from "../utils/helpers";
 
-// Import PopUpModal component
-import PopUpModal from "./components/PopUpModal";
+import { useModal } from "./context/ModalProvider.jsx";
+
+import ContactFormModal from "./components/ContactFormModal.jsx";
 
 // Define HeroTofu form endpoint
 const FORM_ENDPOINT =
@@ -12,21 +13,18 @@ const FORM_ENDPOINT =
 
 function Contact() {
 
+  let modalMessage = "";
+
   // Define fields state variables for the form
   const [senderName, setSenderName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  // Define state variables and functions for modal display
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalMessage, setModalMessage] = useState("");
+  // Open the modal
+  const { openModal } = useModal();
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const openContactFormModal = () => {
+    openModal(<ContactFormModal modalMessage={modalMessage}/>);
   };
 
   // Define functions for handling form input changes and form submission
@@ -35,7 +33,7 @@ function Contact() {
     const inputType = target.name;
     const inputValue = target.value;
 
-    setModalMessage("");
+    modalMessage = "";
 
     if (inputType === "senderName") {
       setSenderName(inputValue);
@@ -47,24 +45,22 @@ function Contact() {
   };
 
   const handleFormSubmit = (e) => {
-    
+
     // Prevent default form submission behavior
     e.preventDefault();
 
     // Validate form input
     if (!senderName) {
-      setModalMessage("Please enter your name.");
-      openModal();
-      return;
+      modalMessage = "Please enter your name.";
+    } else if (!validateEmail(email) || !email) {
+      modalMessage = "Please enter a valid email address.";
+    } else if (!message) {
+      modalMessage = "Please enter a message.";
     }
-    if (!validateEmail(email) || !email) {
-      setModalMessage("Please enter a valid email address.");
-      openModal();
-      return;
-    }
-    if (!message) {
-      setModalMessage("Please enter a message.");
-      openModal();
+
+    if (modalMessage !== "") {
+      openContactFormModal();
+      modalMessage = "";
       return;
     }
 
@@ -95,8 +91,9 @@ function Contact() {
         setSenderName("");
         setEmail("");
         setMessage("");
-        setModalMessage("Your message has been sent, thank you.");
-        openModal();
+        modalMessage = "Your message has been sent, thank you.";
+        openContactFormModal();
+        modalMessage = "";
       })
       .catch((err) => {
         e.target.submit();
@@ -150,9 +147,6 @@ function Contact() {
         </button>
       </form>
       <p>You can also <a href="mailto:cristianobgodinho@gmail.com">e-mail me</a> if you prefer.</p>
-      <PopUpModal isOpen={isModalOpen} onClose={closeModal}>
-        <p>{modalMessage}</p>
-      </PopUpModal>
     </div>
   );
 }
